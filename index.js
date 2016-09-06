@@ -52,7 +52,7 @@ app.get(ruta, function(req,res,next){
 		if (err) {
 			console.log(err);
 		};
-		res.status(200).jsonp({success:true,result:{records:{data}}});
+		res.status(200).jsonp({success:true,result:{records:data}});
 	});
 });
 
