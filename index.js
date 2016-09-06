@@ -50,7 +50,7 @@ app.get(ruta, function(req,res,next){
 		if (err) {
 			console.log(err);
 		};
-		res.status(200).jsonp(data);
+		res.status(200).json(data);
 	});
 });
 
@@ -63,7 +63,7 @@ app.get(ruta+"/:id",function(req,res,next){
 		if (err) {
 			console.log(err);
 		};
-		res.status(200).jsonp(data);
+		res.status(200).json(data);
 	});
 });
 
@@ -73,7 +73,7 @@ app.post(ruta,function(req,res,next){
 	var data = new beep(req.body);
 	data.save(function(err){
 		if (err) {console.log(err)};
-		res.status(200).jsonp(data);
+		res.status(200).json(data);
 	});
 });
 
