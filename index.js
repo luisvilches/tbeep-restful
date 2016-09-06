@@ -1,6 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 
 var app = express();
 var Schema = mongoose.Schema;
@@ -23,6 +24,7 @@ mongoose.connect('mongodb://luisvilches:andres2230@ds023475.mlab.com:23475/tbeep
 app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extend: true}));
+app.use(cors());
 
 
 ///////////////////////////////////////////////////////////////////////
