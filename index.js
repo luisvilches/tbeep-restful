@@ -32,12 +32,17 @@ app.use(cors());
 ///////////////////////////////////////////////////////////////////////
 
 var beep = new Schema({
-
-	nombre: String,
-	direccion: String,
-	comuna: String,
-	x: String,
-	y: String
+	
+	result:{
+		records:[{
+			nombre: String,
+			direccion: String,
+			comuna: String,
+			x: String,
+			y: String	
+		}]
+	}
+	
 
 });
 var beep = mongoose.model('beep',beep);
@@ -52,7 +57,7 @@ app.get(ruta, function(req,res,next){
 		if (err) {
 			console.log(err);
 		};
-		res.status(200).json({records:data});
+		res.status(200).json(data);
 	});
 });
 
