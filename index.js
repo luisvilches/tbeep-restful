@@ -32,18 +32,11 @@ app.use(cors());
 ///////////////////////////////////////////////////////////////////////
 
 var beep = new Schema({
-	
-	result:{
-		records:[{
-			nombre: String,
-			direccion: String,
-			comuna: String,
-			x: String,
-			y: String	
-		}]
-	}
-	
-
+	nombre: String,
+	direccion: String,
+	comuna: String,
+	x: String,
+	y: String	
 });
 var beep = mongoose.model('beep',beep);
 
