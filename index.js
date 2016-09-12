@@ -50,7 +50,7 @@ app.get(ruta, function(req,res,next){
 		if (err) {
 			console.log(err);
 		};
-		res.json(result:data);
+		res.json({result:data});
 	});
 });
 
