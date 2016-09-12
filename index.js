@@ -5,7 +5,6 @@ var cors = require('cors');
 
 var app = express();
 var Schema = mongoose.Schema;
-var ruta = "/api/puntos";
 
 //////////////////////////////////////////////////////////////////////
 /////////////// CONECCION A LA BASE DE DATOS /////////////////////////
@@ -45,7 +44,7 @@ var beep = mongoose.model('beep',beep);
 ///////////////////////////////////////////////////////////////////////
 
 // GET
-app.get(ruta, function(req,res,next){
+app.get('/api/puntos', function(req,res,next){
 	beep.find(function(err,data){
 		if (err) {
 			console.log(err);
@@ -54,33 +53,6 @@ app.get(ruta, function(req,res,next){
 	});
 });
 
-//GET:ID
-app.get(ruta+"/:id",function(req,res,next){
-
-	var id = req.params.id
-
-	beep.findOne({_id: id}, function(err,data){
-		if (err) {
-			console.log(err);
-		};
-		res.status(200).json(data);
-	});
-});
-
-//POST
-app.post(ruta,function(req,res,next){
-
-	var data = new beep(req.body);
-	data.save(function(err){
-		if (err) {console.log(err)};
-		res.status(200).json(data);
-	});
-});
-
-
-//PUT
-
-//DELETE
 
 ///////////////////////////////////////////////////////////////////////
 ////////////////// PUERTO DEL SERVIDOR ////////////////////////////////
